@@ -1,13 +1,12 @@
-
 # 🟢 Template 01 — Seen Elements (HashSet)
 
 > **Category:** Arrays & Hashing
 
 ---
 
-# 🎯 Recognition
+## 🎯 Recognition
 
-Choose this template when the question asks:
+Use this template when you need to:
 
 - Detect duplicate elements.
 - Check whether an element has been seen before.
@@ -16,32 +15,30 @@ Choose this template when the question asks:
 
 ---
 
-# 🧠 Interview Thinking
+## 🧠 Interview Thinking
 
-```
+```text
 Need to remember previous elements
-                │
-                ▼
+            │
+            ▼
 Need fast existence lookup
-                │
-                ▼
-          Use HashSet
+            │
+            ▼
+       Use HashSet
 ```
 
 ---
 
-# 💡 Core Idea
+## 💡 Core Idea
 
-While traversing the array, keep track of every element you've already seen.
+Traverse the array while storing every visited element.
 
-For each element:
-
-- If it already exists in the set → Answer found.
+- If the current element already exists → **Answer found**
 - Otherwise, add it and continue.
 
 ---
 
-# 📝 Java Template
+## 📝 Java Template
 
 ```java
 Set<Integer> seen = new HashSet<>();
@@ -58,76 +55,63 @@ for (int num : nums) {
 
 ---
 
-# ⏱ Complexity
+## ⏱ Complexity
 
-| Operation | Complexity |
-|----------|------------|
-| Lookup | O(1) |
-| Insert | O(1) |
-| Overall Time | O(n) |
-| Space | O(n) |
+| Time | Space |
+|------|-------|
+| O(n) | O(n) |
 
 ---
 
-# 🤔 Why HashSet?
+## 🤔 Why HashSet?
 
-Use **HashSet** when you only care about:
+Use **HashSet** when you only need to know:
 
-> **"Does this element already exist?"**
+> **"Have I seen this element before?"**
 
-You don't need:
+No extra information is required.
+
+If you need additional information like:
 
 - Frequency
 - Index
-- Value Mapping
+- Mapping
 
-If extra information is required, HashMap is usually a better choice.
-
----
-
-# ⚠️ Common Mistakes
-
-❌ Using HashMap when only existence matters.
-
-❌ Forgetting to add the current element after checking.
-
-❌ Using nested loops (`O(n²)`) instead of hashing.
+then **HashMap** is a better choice.
 
 ---
 
-# 🔄 HashSet vs HashMap
+## ⚠️ Common Mistakes
 
-| Need | Choose |
-|------|--------|
+- Using `HashMap` when only existence is required.
+- Forgetting to add the current element after checking.
+- Using nested loops instead of hashing.
+
+---
+
+## 🔄 HashSet vs HashMap
+
+| Need | Data Structure |
+|------|----------------|
 | Only existence | ✅ HashSet |
-| Frequency | ✅ HashMap |
+| Frequency Count | ✅ HashMap |
 | Value → Index | ✅ HashMap |
 | Value → Count | ✅ HashMap |
 
 ---
 
-# 📚 Problems Using This Template
+## 📚 Used In
 
 - ✅ Contains Duplicate
-- ⬜ Happy Number
-- ⬜ Longest Consecutive Sequence
-- ⬜ Unique Email Addresses
-- ⬜ Find All Duplicates (Variation)
+- Happy Number
+- Longest Consecutive Sequence
+- Unique Email Addresses
+- Check If N and Its Double Exist
+- Find All Duplicates in an Array
+- Find the Difference of Two Arrays
 
 ---
 
-# 📝 Revision Checklist
+## ⭐ One-Line Summary
 
-Before using this template, ask yourself:
-
-- [ ] Do I only need to know whether an element exists?
-- [ ] Do I need fast lookup?
-- [ ] Am I storing unnecessary information?
-
-If all answers are **Yes**, use **HashSet**.
-
----
-
-# ⭐ One Line Summary
-
-> **Need fast existence lookup → Use HashSet.**
+> **Need to know "Have I seen this before?" → Use HashSet.**
